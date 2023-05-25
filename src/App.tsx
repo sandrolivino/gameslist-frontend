@@ -1,20 +1,20 @@
 import './App.css'
 import { Card } from './components/card/card';
-import { GameData } from './interface/GameData'
+import { useGameData } from './hooks/useGameData';
 
 function App() {
-  const data: GameData[] = [];
+  const { data } = useGameData();
 
   return (
     <div className="container">
       <h1>Games</h1>
       <div className="card-grid">
-        {data.map(gameData => 
+        {data?.map(dataFromUseGameData => 
         <Card
-          title= {gameData.title}
-          year={gameData.year}
-          imgUrl={gameData.imgUrl}
-          shortDescription={gameData.shortDescription}  
+          title= {dataFromUseGameData.title}
+          year={dataFromUseGameData.year}
+          imgUrl={dataFromUseGameData.imgUrl}
+          shortDescription={dataFromUseGameData.shortDescription}  
         />)}
       </div>
       
