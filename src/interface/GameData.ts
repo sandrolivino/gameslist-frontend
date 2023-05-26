@@ -1,7 +1,11 @@
 export interface GameData {
     id?: number,
     title: string,
-    imgUrl: string,
     year: number,
-    shortDescription: string
+    genre: string,
+    platforms: string,
+    score: number,
+    imgUrl: string,
+    shortDescription: string,
+    longDescription: string
 }
